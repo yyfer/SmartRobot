@@ -1,0 +1,305 @@
+html, body {
+  width: 1440px;
+  height: 1024px;
+  background-color: #ffffff;
+}
+
+p.link {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+p.link a {
+  display: inline-block;
+}
+
+#app {
+  position: relative;
+  width: 1440px;
+  height: 924px;
+  padding-top: 100px;
+  font-family: "Microsoft YaHei", serif;
+  background-color: #ffffff;
+}
+#app ul, #app li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#app h1.logo {
+  position: relative;
+  margin: 0 auto;
+  width: 358px;
+  height: 80px;
+}
+#app h1.logo i {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url("../img/logo.png") 0 0 no-repeat;
+  background-size: cover;
+}
+#app h1.logo span {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 258px;
+  height: 64px;
+  font-size: 64px;
+  line-height: 1;
+  text-align: right;
+  color: #9b9b9b;
+}
+#app img.bg {
+  position: absolute;
+  bottom: 0px;
+  width: 1440px;
+  height: 607px;
+  object-fit: contain;
+  opacity: 0.3;
+  z-index: -1;
+}
+#app h1.title {
+  height: 64px;
+  margin: 0 auto;
+  margin-top: 127px;
+  font-size: 64px;
+  line-height: 1;
+  text-align: center;
+  color: #9b9b9b;
+}
+#app h2.subtitle {
+  height: 36px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  color: #9b9b9b;
+}
+#app img.logining {
+  position: absolute;
+  top: 546px;
+  left: 520px;
+  width: 400px;
+  height: 274px;
+  object-fit: contain;
+}
+#app div.consult, #app div.upload {
+  position: relative;
+  margin: 101px 70px 0 70px;
+  font-size: 24px;
+}
+#app div.consult div.left, #app div.upload div.left {
+  position: relative;
+  width: 790px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  float: left;
+}
+#app div.consult div.left .chat_panel, #app div.upload div.left .chat_panel {
+  height: 526px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+#app div.consult div.left .chat_panel li, #app div.upload div.left .chat_panel li {
+  display: inline-block;
+  width: 100%;
+  margin-top: 30px;
+}
+#app div.consult div.left .chat_panel li img, #app div.upload div.left .chat_panel li img {
+  position: relative;
+  width: 103px;
+  height: 103px;
+  object-fit: fill;
+}
+#app div.consult div.left .chat_panel li div, #app div.upload div.left .chat_panel li div {
+  position: relative;
+  display: inline-block;
+  width: 480px;
+  margin: 0 29px;
+}
+#app div.consult div.left .chat_panel li div p.name, #app div.upload div.left .chat_panel li div p.name {
+  position: relative;
+  height: 24px;
+  margin: 4px 0 0 0;
+  color: #39393a;
+}
+#app div.consult div.left .chat_panel li div p.says, #app div.upload div.left .chat_panel li div p.says {
+  line-height: 1.5;
+  margin: 14px 0 0 0;
+  color: #898989;
+}
+#app div.consult div.left .chat_panel li.left img, #app div.upload div.left .chat_panel li.left img {
+  float: left;
+  margin-left: 50px;
+}
+#app div.consult div.left .chat_panel li.left div, #app div.upload div.left .chat_panel li.left div {
+  float: left;
+}
+#app div.consult div.left .chat_panel li.left div p, #app div.upload div.left .chat_panel li.left div p {
+  float: left;
+}
+#app div.consult div.left .chat_panel li.right img, #app div.upload div.left .chat_panel li.right img {
+  float: right;
+  margin-right: 50px;
+}
+#app div.consult div.left .chat_panel li.right div, #app div.upload div.left .chat_panel li.right div {
+  float: right;
+}
+#app div.consult div.left .chat_panel li.right div p, #app div.upload div.left .chat_panel li.right div p {
+  float: right;
+}
+#app div.consult div.left .chat_panel li.right div p.name, #app div.upload div.left .chat_panel li.right div p.name {
+  text-align: right;
+}
+#app div.consult div.left .scan_panel, #app div.upload div.left .scan_panel {
+  height: 526px;
+  background-color: #ffffff;
+}
+#app div.consult div.left .scan_panel img, #app div.upload div.left .scan_panel img {
+  display: inline-block;
+  margin: 21px 21px 0 21px;
+  width: 750px;
+  height: 465px;
+  object-fit: contain;
+  border: 1px solid #9b9b9b;
+}
+#app div.consult div.left .info, #app div.upload div.left .info {
+  height: 118px;
+  background-color: #4990e2;
+}
+#app div.consult div.left .info div.tips, #app div.upload div.left .info div.tips {
+  margin: 30px 0 0 50px;
+  color: #ffffff;
+  float: left;
+}
+#app div.consult div.left .info div.tips p, #app div.upload div.left .info div.tips p {
+  padding: 0;
+  margin: 0;
+  height: 24px;
+}
+#app div.consult div.left .info div.tips p.title, #app div.upload div.left .info div.tips p.title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#app div.consult div.left .info div.icon, #app div.upload div.left .info div.icon {
+  position: relative;
+  top: -20px;
+  right: 50px;
+  float: right;
+}
+#app div.consult div.left .info div.icon span, #app div.upload div.left .info div.icon span {
+  display: inline-block;
+  margin-left: 25px;
+  width: 86px;
+  height: 86px;
+  line-height: 86px;
+  font-size: 49.9px;
+  text-align: center;
+  border-radius: 50%;
+  color: #4a90e2;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+#app div.consult div.left .info div.icon img, #app div.upload div.left .info div.icon img {
+  width: 86px;
+  height: 86px;
+  margin-left: 25px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+#app div.consult div.left .info div.icon img:hover, #app div.upload div.left .info div.icon img:hover {
+  cursor: pointer;
+}
+#app div.consult div.right, #app div.upload div.right {
+  position: relative;
+  width: 418px;
+  height: 645px;
+  right: 60px;
+  float: right;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+#app div.consult div.right ul, #app div.upload div.right ul {
+  position: relative;
+}
+#app div.consult div.right li, #app div.upload div.right li {
+  float: left;
+  width: 179px;
+  height: 276px;
+  margin: 21px 0 0 21px;
+}
+#app div.consult div.right li img, #app div.upload div.right li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: 1px solid #9b9b9b;
+}
+#app div.consult div.right li img:hover, #app div.upload div.right li img:hover {
+  cursor: pointer;
+}
+#app div.consult div.right div.slidebar, #app div.upload div.right div.slidebar {
+  position: absolute;
+  bottom: 6px;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+#app div.consult div.right div.slidebar span, #app div.upload div.right div.slidebar span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: solid 1px #9b9b9b;
+  border-radius: 50%;
+}
+#app div.consult div.right div.slidebar span.active, #app div.upload div.right div.slidebar span.active {
+  background-color: #4990e2;
+}
+#app div.consult div.right div.slidebar span:hover, #app div.upload div.right div.slidebar span:hover {
+  cursor: pointer;
+}
+#app div.consult div.tools, #app div.upload div.tools {
+  position: relative;
+  width: 478px;
+  float: right;
+}
+#app div.consult div.tools li, #app div.upload div.tools li {
+  display: inline-block;
+  width: 100%;
+  height: 146px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+#app div.consult div.tools li:hover, #app div.upload div.tools li:hover {
+  cursor: pointer;
+}
+#app div.consult div.tools li img, #app div.upload div.tools li img {
+  width: 70.5px;
+  height: 80px;
+  float: left;
+  margin: 33px 0 33px 40px;
+}
+#app div.consult div.tools li div, #app div.upload div.tools li div {
+  height: 106px;
+  float: left;
+  margin: 20px 0 20px 29.5px;
+  border-left: 2px solid #9b9b9b;
+}
+#app div.consult div.tools li div p, #app div.upload div.tools li div p {
+  width: 278px;
+  margin: 0 0 0 30px;
+}
+#app div.consult div.tools li div p.title, #app div.upload div.tools li div p.title {
+  height: 24px;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+#app div.consult div.tools li div p.info, #app div.upload div.tools li div p.info {
+  height: 72px;
+  line-height: 1.5;
+  color: #9b9b9b;
+}
