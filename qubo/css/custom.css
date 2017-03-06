@@ -1,0 +1,110 @@
+.clearfix:before,.clearfix:after,.row:before,.row:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.row:after,.clearfix:after {
+    clear: both;
+}
+
+.row,.clearfix {
+    zoom: 1;
+}
+
+.background-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+}
+
+.background {
+    width: 1440px;
+    height: 607px;
+    object-fit: contain;
+    opacity: 0.3;
+}
+
+.header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.header .title {
+    width: 358px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    display: inline-block;
+}
+
+.box-wrapper {
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+
+.box-wrapper .box .box-title {
+    width: 146px;
+    height: 36px;
+    font-family: PingFangSC;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #39393a;
+}
+
+.box-wrapper .box .box-body .box-list {
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.box-wrapper .box .box-body .box-list li {
+    height: auto;
+    opacity: 0.9;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-top: 20px;
+}
+
+.box-wrapper .box .box-body .box-list li .box-content {
+    width: 448px;
+    height: inherit;
+    font-family: PingFangSC;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #9b9b9b;
+    display: inline-block;
+    float: left;
+    padding: 12px 0px 12px 19px;
+}
+
+.box-wrapper .box .box-body .box-list li .box-content.blue{
+    border-left: 12px solid #4990e2;
+}
+
+.box-wrapper .box .box-body .box-list li .box-content.green{
+    border-left: 12px solid #00bfa5;
+}

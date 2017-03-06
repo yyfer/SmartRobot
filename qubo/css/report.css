@@ -1,0 +1,228 @@
+#report {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.case-wrapper {
+    margin-left: 100px;
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+
+.case-wrapper .case .case-title {
+    width: 326.1px;
+    height: 36px;
+    font-family: PingFangSC;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #39393a;
+}
+
+.case-wrapper .case .case-body {
+    margin-top: 30px;
+}
+
+.case-wrapper .case .multi-chart {
+    margin-top: 20px;
+}
+
+.dot:not(first-child) {
+    margin-left: 30px;
+}
+
+.footer-wrapper {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.footer-wrapper .footer {
+    display: inline-block;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: solid 1px #9b9b9b;
+    border-radius: 50%;
+    float: left;
+}
+
+.dot.active {
+    width: 20px;
+    height: 20px;
+    background-color: #4990e2;
+    border: solid 1px #9b9b9b;
+    border-radius: 50%;
+}
+
+.case-proof, .relative-case {
+    width: 29%;
+}
+
+.relative-case {
+    margin-left: 25px;
+}
+
+.people-relative-wrapper {
+    display: inline-block;
+    float: left;
+    text-align: left;
+    margin-left: 50px;
+    width: 34%
+}
+
+.people-relative-wrapper .people-relative .people-relative-title {
+    width: 326.1px;
+    height: 36px;
+    font-family: PingFangSC;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #39393a;
+}
+
+.people-relative-wrapper .people-relative .people-relative-body {
+    margin-top: 30px;
+}
+
+.people-relative-wrapper .people-relative .people-relative-body div {
+    width: 555px;
+    height: 555px;
+    background-color: #ffffff;
+    border: solid 1.1px #9b9b9b;
+    border-radius: 50%;
+}
+
+.compensate-range-wrapper {
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: -155px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-title {
+    width: 146px;
+    height: 36px;
+    font-family: PingFangSC;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #39393a;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body {
+    position: absolute;
+    top: 60px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar {
+    width: 900px;
+    height: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar-blue {
+    width: 30%;
+    height: 60px;
+    background-color: #4990e2;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar-green {
+    width: 40%;
+    height: 60px;
+    background-color: #00bfa5;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-line {
+    height: 31px;
+    border: solid 1px #9b9b9b;
+    position: absolute;
+    right: 0px;
+    bottom: -33px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-oval {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: solid 1px #9b9b9b;
+    border-radius: 50%;
+    z-index: 20;
+    right: -10px;
+    bottom: -33px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-content {
+    width: 206px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: solid 1px #9b9b9b;
+    position: absolute;
+    z-index: 10;
+    right: -42px;
+    bottom: -84px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-content span:nth-child(1) {
+    font-family: PingFangSC;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    color: #39393a;
+    display: block;
+    margin: 8px 0px 2px 0px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-content span:nth-child(2) {
+    color: #898989;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-content span.down {
+    color: #346408;
+    margin-left: 10px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-content span.up {
+    color: #c30016;
+    margin-left: 10px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar-white .compensate-range-line {
+    right: 90px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar-white .compensate-range-oval {
+    right: 80px;
+}
+
+.compensate-range-wrapper .compensate-range .compensate-range-body .compensate-range-bar-white .compensate-range-content {
+    right: -75px;
+}
+
+.report-2.footer-wrapper{
+    margin-top:50px;
+}
