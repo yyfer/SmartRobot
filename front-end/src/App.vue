@@ -6,7 +6,8 @@
       <router-link to="/home" @click.stop>home</router-link>
       <router-link to="/upload" @click.stop>upload</router-link>
       <router-link to="/consult" @click.stop>consult</router-link>
-      <router-link to="/notfound" @click.stop>notfound</router-link>
+      <router-link to="/report1" @click.stop>report1</router-link>
+      <router-link to="/report2" @click.stop>report2</router-link>
     </p>
     <h1 class="logo"><i></i><span>{{system_name}}</span></h1>
     <router-view></router-view>
@@ -90,6 +91,6 @@ export default {
     height: 607px;
     object-fit: contain;
     opacity: 0.3;
-    z-index: -1;
+    z-index: 0;
   }
 </style>
