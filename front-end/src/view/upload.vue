@@ -80,6 +80,7 @@
     position: relative;
     margin: 101px 70px 0 70px;
     font-size: 24px;
+    z-index: 1;
     div.left{
       position:relative;
       width: 790px;

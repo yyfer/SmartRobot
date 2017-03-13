@@ -8,7 +8,7 @@
           <span>{{opt.description}}</span>
         </div>
         <div class="layer-footer">
-          <a href="javascript:;" class="btn">
+          <a href="javascript:;" class="btn" @click="routeTo(opt.route)">
             <div>选择</div>
           </a>
         </div>
@@ -23,10 +23,15 @@
     data () {
       return {
         operators: [
-          {title: '扫描问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_scan.png')},
-          {title: '语音问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_voice.png')},
-          {title: '我的案件', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_user.png')}
+          {title: '扫描问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_scan.png'), route: 'Upload'},
+          {title: '语音问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_voice.png'), route: 'Consult'},
+          {title: '我的案件', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_user.png'), route: 'MyCase'}
         ]
+      }
+    },
+    methods: {
+      routeTo (route) {
+        this.$router.push(route)
       }
     }
   }
@@ -36,6 +41,8 @@
 
   .content-wrapper {
     position: relative;
+    margin-top: 143px;
+    text-align: center;
     z-index: 1;
   }
 
@@ -61,7 +68,6 @@
   .layer .layer-title {
     width: 232px;
     height: 56px;
-    font-family: PingFangSC;
     font-size: 56px;
     font-weight: normal;
     font-style: normal;
