@@ -6,15 +6,6 @@
   margin-top: 70px;
   z-index: 1; }
 
-.clearfix:before, .clearfix:after {
-  content: '\0020';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  clear: both; }
-
 .content-wrapper {
   position: relative; }
   .content-wrapper .content {

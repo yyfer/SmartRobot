@@ -28,7 +28,7 @@
     </div>
     <div class="tools">
       <ul>
-        <li v-for="tool in tools">
+        <li v-for="tool in tools" @click="routeTo(tool.route)">
           <img :src="tool.logo" alt="">
           <div>
             <p class="title">{{tool.title}}</p>
@@ -71,7 +71,7 @@
           typeIcon: ['民', '医']
         },
         tools: [
-          {title: '我的案件', info: '简要叙述案情，包括当事人，不要写真实姓名及地', logo: require('../assets/mine.png')},
+          {title: '我的案件', info: '简要叙述案情，包括当事人，不要写真实姓名及地', logo: require('../assets/mine.png'), route: 'MyCase'},
           {title: '诉讼指南', info: '简要叙述案情，包括当事人，不要写真实姓名及地', logo: require('../assets/guide.png')},
           {title: '开庭公告', info: '简要叙述案情，包括当事人，不要写真实姓名及地', logo: require('../assets/notation.png')},
           {title: '常见问题', info: '简要叙述案情，包括当事人，不要写真实姓名及地', logo: require('../assets/case.png')}
@@ -84,6 +84,11 @@
       },
       caseType () {
         return Array.prototype.join.call(this.caseInfo.type, ' ')
+      }
+    },
+    methods: {
+      routeTo (route) {
+        this.$router.push(route)
       }
     }
   }

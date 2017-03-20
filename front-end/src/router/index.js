@@ -7,6 +7,8 @@ import Consult from '@/view/consult'
 import Upload from '@/view/upload'
 import Report1 from '@/view/report1'
 import Report2 from '@/view/report2'
+import MyCase from '@/view/myCase'
+import MyCaseDetail from '@/view/myCaseDetail'
 
 Vue.use(Router)
 
@@ -18,6 +20,8 @@ export default new Router({
     {path: '/upload', name: 'Upload', component: Upload},
     {path: '/consult', name: 'Consult', component: Consult},
     {path: '/report1', name: 'Report1', component: Report1},
-    {path: '/report2', name: 'Report2', component: Report2}
+    {path: '/report2', name: 'Report2', component: Report2},
+    {path: '/myCase', name: 'MyCase', component: MyCase},
+    {path: '/MyCaseDetail', name: 'MyCaseDetail', component: MyCaseDetail}
   ]
 })
