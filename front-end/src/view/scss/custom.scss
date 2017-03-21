@@ -1,0 +1,89 @@
+.clearfix:before, .clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+
+.content-wrapper {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+  z-index:1000;
+}
+
+.content-wrapper .content {
+  display: inline-block;
+}
+
+.panel {
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.panel .panel-bar {
+  width: 100%;
+  height: 9px;
+  opacity: 1;
+  background-color: #4990e2;
+}
+
+.panel .panel-bar.void {
+  opacity: 0.4;
+  background-color: #4990e2;
+}
+
+.panel .list-wrapper .line {
+  width: 100%;
+  border: solid 1px #9b9b9b;
+  float: left;
+  margin: 20px 0px;
+}
+
+.panel .list-wrapper .list {
+  float: left;
+  width: 50%;
+  height:70px;
+  margin-top:4px;
+}
+
+.panel .list-wrapper .list .icon {
+  float: left;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.panel .list-wrapper .list .icon img {
+}
+
+.panel .list-wrapper .list .introduce {
+  float: left;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.panel .list-wrapper .list .name {
+  height: 24px;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.panel .list-wrapper .list .detail {
+  height: 24px;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9b9b9b;
+  margin-top: 10px;
+}
