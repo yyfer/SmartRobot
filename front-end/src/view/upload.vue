@@ -1,5 +1,8 @@
 <template>
   <div class="upload">
+    <div class="operator">
+      <a><i class="settings"></i><span @click="report">生成报告</span></a>
+    </div>
     <div class="left">
       <div class="title">扫描中</div>
       <div class="scan_panel">
@@ -79,21 +82,17 @@
       pageSize () {
         return Math.ceil(this.all.length / this.singlePageItemSize)
       }
-//      adjustAll () {
-//        let row1 = []
-//        let row2 = []
-//        this.all.forEach((v, i) => {
-//          if (i % 4 === 0 || i % 4 === 1) {
-//            row1.push(v)
-//          } else {
-//            row2.push(v)
-//          }
-//        })
-//        // combine
-//        return row1.concat(row2)
-//      }
     },
     methods: {
+      report () {
+        // show the tips
+        this.$emit('modeTipsIn', '小津正在分析，请稍后......')
+        // generate report
+        setTimeout(() => {
+          this.$emit('modeTipsOut')
+          this.$router.push({name: 'Report1'})
+        }, 1000)
+      },
       scan () {
         this.currentStatus = this.status.standby
       },
@@ -118,25 +117,25 @@
         }
       },
       deleteItem (index) {
-        if (index < this.itemSize && index >= 0) {
-          if (this.currentItem === index) {
-            // check if there be remaining items
-            if (this.itemSize === 1) {
-              // status
-              this.currentStatus = this.status.standby
-            }
-            // items
-            Array.prototype.splice.apply(this.all, [index, 1])
-            this.currentItem = 0
-            this.currentPage = 0
-          } else {
-            Array.prototype.splice.apply(this.all, [index, 1])
-            if (this.currentItem > index) {
-              this.currentItem--
-            }
-            this.currentPage = this.currentItem / this.singlePageItemSize
-          }
-        }
+//        if (index < this.itemSize && index >= 0) {
+//          if (this.currentItem === index) {
+//            // check if there be remaining items
+//            if (this.itemSize === 1) {
+//              // status
+//              this.currentStatus = this.status.standby
+//            }
+//            // items
+//            Array.prototype.splice.apply(this.all, [index, 1])
+//            this.currentItem = 0
+//            this.currentPage = 0
+//          } else {
+//            Array.prototype.splice.apply(this.all, [index, 1])
+//            if (this.currentItem > index) {
+//              this.currentItem--
+//            }
+//            this.currentPage = this.currentItem / this.singlePageItemSize
+//          }
+//        }
       }
     }
   }
@@ -156,6 +155,38 @@
       line-height: 1;
       color: #4a4a4a;
       margin-bottom: 20px;
+    }
+    div.operator{
+      position: absolute;
+      float: right;
+      height: 64px;
+      right: 0;
+      top: -120px;
+      &>a{
+        display: inline-block;
+        float: left;
+        height: 64px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+        color: #4a4a4a;
+        &>span{
+          display: inline-block;
+          float: left;
+          line-height: 64px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        &>i.settings{
+          display: inline-block;
+          float: left;
+          width: 43px;
+          height: 36px;
+          margin: 14px 20px 0 0;
+          background-image: url("../assets/生成报告.png");
+        }
+      }
     }
     div.left{
       position:relative;

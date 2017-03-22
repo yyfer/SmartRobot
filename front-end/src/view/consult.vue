@@ -43,8 +43,11 @@
             <p class="info">{{tool.info}}</p>
           </div>
         </li>
-        <ModeTips v-show="mode.tools" v-on:cancel="cancelQuestion">
-          <span>小津正在分析，请稍后...</span>
+        <ModeTips
+          v-show="mode.tools"
+          v-on:cancel="cancelQuestion"
+          content="小津正在分析，请稍后..."
+        >
         </ModeTips>
       </ul>
     </div>

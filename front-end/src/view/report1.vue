@@ -3,6 +3,9 @@
 */
 <template>
   <div id="report" class="content-wrapper">
+    <div class="operator">
+      <a><i class="print"></i><span @click="print">打印报告</span></a>
+    </div>
     <div class="content">
       <div class="dispute-case box-wrapper">
         <div class="box">
@@ -41,8 +44,8 @@
     data () {
       return {
         reports: [
-          {name: 'report1', active: true, route: 'Report1'},
-          {name: 'report2', active: false, route: 'Report2'}
+          {name: 'report1', active: true, route: {name: 'Report1'}},
+          {name: 'report2', active: false, route: {name: 'Report2'}}
         ],
         topics: [
           '原告第一联合的与诉讼主体相关系列问题。具体体现在原告第一联合是否为被告江南公司的债权人。',
@@ -60,6 +63,10 @@
       }
     },
     methods: {
+      print () {
+        // show tips
+        this.$emit('modeTipsIn', '请稍后......')
+      },
       routeTo (route) {
         this.$router.push(route)
       }

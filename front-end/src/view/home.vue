@@ -23,9 +23,9 @@
     data () {
       return {
         operators: [
-          {title: '扫描问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_scan.png'), route: 'Upload'},
-          {title: '语音问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_voice.png'), route: 'Consult'},
-          {title: '我的案件', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_user.png'), route: 'MyCase'}
+          {title: '扫描问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_scan.png'), route: {name: 'Upload'}},
+          {title: '语音问案', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_voice.png'), route: {name: 'Consult'}},
+          {title: '我的案件', description: '快速准确将扫描的纸质文档、PDF格式文件或OCR文字图像，转换成可编辑的格式，99.8％的识别准确率OCR技术即刻能够识别文本，转换几乎所有打印的文档类型，包括书籍，杂志上的文章与复杂的布局。', icon: require('../assets/icon_user.png'), route: {name: 'MyCase'}}
         ]
       }
     },

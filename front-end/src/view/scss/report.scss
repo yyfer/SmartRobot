@@ -24,6 +24,39 @@
   }
 }
 
+div.operator{
+  position: absolute;
+  float: right;
+  height: 64px;
+  right: 100px;
+  top: -133px;
+  &>a{
+    display: inline-block;
+    float: left;
+    height: 64px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+    color: #4a4a4a;
+    &>span{
+      display: inline-block;
+      float: left;
+      line-height: 64px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    &>i.print{
+      display: inline-block;
+      float: left;
+      width: 43px;
+      height: 36px;
+      margin: 14px 20px 0 0;
+      background-image: url("../../assets/生成报告.png");
+    }
+  }
+}
+
 .dispute-case{
   width: 448px;
 }

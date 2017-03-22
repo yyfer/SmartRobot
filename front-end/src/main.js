@@ -14,6 +14,7 @@ Vue.config.productionTip = false
 // config before every route entry
 router.beforeEach((to, from, next) => {
   // don't login should to Login/Welcome
+  console.log(to, store.state.isLogin)
   if (!store.state.isLogin && ['Login', 'Welcome'].indexOf(to.name) === -1) {
     next(false)
     return

@@ -3,6 +3,9 @@
 */
 <template>
   <div id="report" class="content-wrapper">
+    <div class="operator">
+      <a><i class="print"></i><span @click="print">打印报告</span></a>
+    </div>
     <div class="content">
       <div class="case-proof box-wrapper">
         <div class="box">
@@ -71,8 +74,8 @@
     data () {
       return {
         reports: [
-          {name: 'report1', active: false, route: 'Report1'},
-          {name: 'report2', active: true, route: 'Report2'}
+          {name: 'report1', active: false, route: {name: 'Report1'}},
+          {name: 'report2', active: true, route: {name: 'Report2'}}
         ],
         evidences: [
           '人民币短期借款合同',
@@ -104,6 +107,10 @@
       }
     },
     methods: {
+      print () {
+        // show tips
+        this.$emit('modeTipsIn', '请稍后......')
+      },
       routeTo (route) {
         this.$router.push(route)
       }

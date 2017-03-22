@@ -6,9 +6,9 @@
   <div class="modeTips">
     <div>
       <div class="title">提示</div>
-      <div class="content">
+      <div :class="{content:true, minWidth:level==='0'}">
         <img class="loading" src="../assets/加载.png" alt="">
-        <slot></slot>
+        <span>{{content}}</span>
       </div>
       <div class="button">
         <span @click="cancel">算了</span>
@@ -21,6 +21,7 @@
 <script>
   export default {
     name: 'mode',
+    props: ['content', 'level'],
     methods: {
       cancel () {
         this.$emit('cancel')
@@ -41,6 +42,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
+    z-index: 100;
     &>div{
       padding: 25px;
       background-color: #ffffff;
@@ -54,7 +56,10 @@
       }
       div.content{
         height: 50px;
-        margin: 25px 0 25px 0;
+        margin: 25px 10px;
+        &.minWidth{
+          min-width: 450px;
+        }
         &:after{
           content: ' ';
           height: 0;

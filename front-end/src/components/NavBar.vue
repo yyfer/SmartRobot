@@ -23,7 +23,9 @@
     },
     methods: {
       routeTo (route) {
-        this.$router.push(route)
+        if (route) {
+          this.$router.push(route)
+        }
       }
     }
   }

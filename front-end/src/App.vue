@@ -1,11 +1,5 @@
 <template>
   <div>
-    <p class="link">
-      <router-link to="/home" @click.stop>home</router-link>
-      <router-link to="/report1" @click.stop>report1</router-link>
-      <router-link to="/report2" @click.stop>report2</router-link>
-      <a href="#" @click.stop.prevent="logout">logout</a>
-    </p>
     <div id="app" @click="isLogin?'':toLoginPage()">
       <h1 class="logo" v-if="isLogin" style="margin-top: -60px;"><i></i><span>{{system_name}}</span></h1>
       <h1 class="logo" v-else><i></i><span>{{system_name}}</span></h1>
@@ -13,6 +7,8 @@
       <NavBar v-show="isLogin"></NavBar>
       <router-view
         v-on:modeImageIn="modeImageIn"
+        v-on:modeTipsIn="modeTipsIn"
+        v-on:modeTipsOut="modeTipsOut"
       ></router-view>
       <ModeImage
         v-show="modeImage.status"
@@ -23,6 +19,13 @@
         :height="modeImage.height"
       >
       </ModeImage>
+      <ModeTips
+        v-show="modeTips.status"
+        v-on:cancel="modeTipsOut"
+        :content="modeTips.content"
+        level="0"
+      >
+      </ModeTips>
       <img class="bg" src="./assets/bg.png" alt="...">
     </div>
   </div>
@@ -31,11 +34,13 @@
 <script>
   let NavBar = require('@/components/NavBar')
   let ModeImage = require('@/components/ModeImage')
+  let ModeTips = require('@/components/ModeTips')
   export default {
     name: 'app',
     components: {
       ModeImage,
-      NavBar
+      NavBar,
+      ModeTips
     },
     data () {
       return {
@@ -47,6 +52,9 @@
           source: null,
           width: 'auto',
           height: 'auto'
+        },
+        modeTips: {
+          status: false
         }
       }
     },
@@ -78,6 +86,13 @@
       },
       modeImageOut () {
         this.modeImage.status = false
+      },
+      modeTipsIn (content) {
+        this.modeTips.content = content
+        this.modeTips.status = true
+      },
+      modeTipsOut () {
+        this.modeTips.status = false
       }
     }
   }
@@ -97,16 +112,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-  p.link{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 100;
-    a{
-      display: inline-block;
-      margin-left: 20px;
-    }
   }
   #app {
     position: relative;
