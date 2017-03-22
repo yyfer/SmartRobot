@@ -153,6 +153,7 @@
   }
   img.bg{
     position: absolute;
+    left: 0px;
     bottom: 0px;
     width: 1440px;
     height: 607px;
