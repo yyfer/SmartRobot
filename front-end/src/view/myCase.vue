@@ -1,17 +1,17 @@
 <template>
   <div id="myCase" class="content-wrapper">
+    <div class="operator clearfix">
+      <div class="my-case-title">我是当事人</div>
+      <div class="my-case-radio">
+        <div class="my-case-radio-bar"></div>
+        <div class="my-case-radio-circle-left" v-if="type == '当'"></div>
+        <div class="my-case-radio-circle-right" v-if="type == '代'"></div>
+      </div>
+      <div class="agent-case-title">我是代理人</div>
+    </div>
     <div class="content">
         <div class="my-case-wrapper">
           <div class="left-side">
-            <div class="header clearfix">
-              <div class="my-case-title">我是当事人</div>
-              <div class="my-case-radio">
-                <div class="my-case-radio-bar"></div>
-                <div class="my-case-radio-circle-left" v-if="type == '当'"></div>
-                <div class="my-case-radio-circle-right" v-if="type == '代'"></div>
-              </div>
-              <div class="agent-case-title">我是代理人</div>
-            </div>
             <div class="my-case-panel-wrapper" @click="routeTo('MyCaseDetail')">
               <div class="panel my-case-panel third void">
                 <div class="panel-bar my-case-panel-bar"></div>
@@ -116,59 +116,64 @@
 
 <style lang="scss" rel="stylesheet/scss" type="text/css" scoped>
   $font-family:PingFangSC;
+  .operator{
+    position:absolute;
+    right: 22px;
+    top: -103px;
+    .my-case-title,.agent-case-title{
+      width: 122px;
+      height: 24px;
+      font-family: $font-family;
+      font-size: 24px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #39393a;
+      float:left;
+      margin-top:7px;
+    }
+    .my-case-radio{
+      float:left;
+      margin:0px 25px;
+      position: relative;
+      .my-case-radio-bar{
+        width: 72px;
+        height: 24px;
+        border-radius: 24px;
+        background-color: #4990e2;
+        border: solid 1px #979797;
+        float: left;
+        margin-top: 12px;
+      }
+      .my-case-radio-circle-left{
+        width: 36px;
+        height: 36px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border: solid 1px #979797;
+        border-radius: 50%;
+        position: absolute;
+        left: -15px;
+        top:5px;
+      }
+      .my-case-radio-circle-right{
+        width: 36px;
+        height: 36px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border: solid 1px #979797;
+        border-radius: 50%;
+        position: absolute;
+        right: -15px;
+        top:5px;
+      }
+    }
+  }
   div.my-case-wrapper{
     .left-side{
       float:left;
-      .my-case-title,.agent-case-title{
-        width: 122px;
-        height: 24px;
-        font-family: $font-family;
-        font-size: 24px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #39393a;
-        float:left;
-        margin-top:5px;
-      }
-      .my-case-radio{
-        float:left;
-        margin:0px 40px;
-        position: relative;
-        .my-case-radio-bar{
-          width: 72px;
-          height: 24px;
-          border-radius: 24px;
-          background-color: #4990e2;
-          border: solid 1px #979797;
-          float: left;
-          margin-top: 12px;
-        }
-        .my-case-radio-circle-left{
-          width: 36px;
-          height: 36px;
-          background-color: #ffffff;
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-          border: solid 1px #979797;
-          border-radius: 50%;
-          position: absolute;
-          left: -15px;
-          top:5px;
-        }
-        .my-case-radio-circle-right{
-          width: 36px;
-          height: 36px;
-          background-color: #ffffff;
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-          border: solid 1px #979797;
-          border-radius: 50%;
-          position: absolute;
-          right: -15px;
-          top:5px;
-        }
-      }
       .my-case-panel-wrapper{
         margin-top:60px;
         position: relative;
