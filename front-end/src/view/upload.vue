@@ -60,7 +60,7 @@
     },
     data () {
       return {
-        currentItem: 0,
+        currentItem: -1,
         currentPage: 0,
         singlePageItemSize: 4,
         all: [
@@ -95,6 +95,7 @@
       },
       scan () {
         this.currentStatus = this.status.standby
+        this.currentItem = -1
       },
       look () {
         if (this.currentStatus === this.status.ready) {

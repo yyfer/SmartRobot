@@ -35,7 +35,9 @@
         <div class="people-relative">
           <div class="people-relative-title">人物关系</div>
           <div class="people-relative-body">
-            <div class="graph"></div>
+            <div class="graph">
+              <PeoplePatterns :peoples="peoples"></PeoplePatterns>
+            </div>
           </div>
         </div>
       </div>
@@ -69,8 +71,12 @@
 </template>
 
 <script>
+  let PeoplePatterns = require('@/components/PeoplePatterns')
   export default {
     name: 'report2',
+    components: {
+      PeoplePatterns
+    },
     data () {
       return {
         reports: [
@@ -94,6 +100,14 @@
           {name: '最低赔偿额', value: 10000, rate: 54.5, style: {backgroundColor: '#4990e2', width: '30%'}},
           {name: '评估赔偿额', value: 20000, style: {backgroundColor: '#00bfa5', width: '40%'}},
           {name: '评估赔偿额', value: 25000, rate: -13.6, style: {backgroundColor: '#ffffff', width: '30%'}}
+        ],
+        peoples: [
+          {name: '配偶', src: require('../assets/配偶.png')},
+          {name: '朋友', src: require('../assets/朋友.png')},
+          {name: '姐姐', src: require('../assets/姐姐.png')},
+          {name: '姐夫', src: require('../assets/姐夫.png')},
+          {name: '妹妹', src: require('../assets/妹妹.png')},
+          {name: '妹夫', src: require('../assets/妹夫.png')}
         ]
       }
     },

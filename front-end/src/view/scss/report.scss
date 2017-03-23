@@ -166,11 +166,9 @@ div.operator{
   .people-relative-body {
     margin: 20px 0 0 21px;
     div.graph {
+      position: relative;
       width: 555px;
       height: 555px;
-      background-color: #ffffff;
-      border: solid 1.1px #9b9b9b;
-      border-radius: 50%;
     }
   }
 }
