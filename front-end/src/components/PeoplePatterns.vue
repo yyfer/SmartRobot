@@ -62,6 +62,7 @@
       left: $gap;
       width: $width - 2*$gap;
       height: $height - 2*$gap;
+      border: solid 0.8px #9b9b9b;
       div.people{
         position: absolute;
         width: 100px;
@@ -90,6 +91,7 @@
       left: $gap*2;
       width: $width - 4*$gap;
       height: $height - 4*$gap;
+      border: solid 0.6px #9b9b9b;
     }
     div.logo{
       position: absolute;
