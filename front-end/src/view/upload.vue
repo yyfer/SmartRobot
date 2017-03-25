@@ -29,12 +29,16 @@
     <div class="right">
       <div class="title">已扫描</div>
       <div class="content">
-        <ul :style="{width:418*pageSize+'px',left:-402*currentPage+'px'}">
-          <li v-for="(item,i) in all" :class="{active:i === currentItem}" @click="select(i)">
-            <img :src="item" alt="">
+        <ul :style="{width:420*pageSize+'px',left:-400*currentPage+'px'}">
+          <li v-for="item in viewAll"
+              :class="{active:item.id === currentItem, marginRight:item.marginRight}"
+              @click="select(item.id)"
+              :key="item.id"
+              :data-index="item.id">
+            <img :src="item.src" alt="">
             <ModeLook>
               <div @click.stop><img src="../assets/移动.png" alt="..."></div>
-              <div @click.stop="deleteItem(i)"><img src="../assets/删除.png" alt="..."></div>
+              <div @click.stop="deleteItem(item.id)"><img src="../assets/删除.png" alt="..."></div>
             </ModeLook>
           </li>
         </ul>
@@ -58,19 +62,34 @@
     components: {
       ModeLook
     },
+    created () {
+      this.all = [
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png'),
+        require('../assets/page.png')
+      ]
+    },
     data () {
       return {
         currentItem: -1,
         currentPage: 0,
         singlePageItemSize: 4,
-        all: [
-          require('../assets/page.png'),
-          require('../assets/page.png'),
-          require('../assets/page.png'),
-          require('../assets/page.png'),
-          require('../assets/page.png'),
-          require('../assets/page.png')
-        ],
+        all: [],
         status: status,
         currentStatus: status.standby
       }
@@ -80,7 +99,20 @@
         return this.all.length
       },
       pageSize () {
-        return Math.ceil(this.all.length / this.singlePageItemSize)
+        return Math.ceil(this.itemSize / this.singlePageItemSize)
+      },
+      viewAll () {
+        // offer to view all data by sequence
+        let firstLine = []
+        let secondLine = []
+        this.all.forEach((v, i) => {
+          if (i % 4 === 0 || i % 4 === 1) {
+            firstLine.push({id: i, src: v, marginRight: (i === this.itemSize - 1 && i % 4 === 0)})
+          } else {
+            secondLine.push({id: i, src: v})
+          }
+        })
+        return firstLine.concat(secondLine)
       }
     },
     methods: {
@@ -118,25 +150,21 @@
         }
       },
       deleteItem (index) {
-//        if (index < this.itemSize && index >= 0) {
-//          if (this.currentItem === index) {
-//            // check if there be remaining items
-//            if (this.itemSize === 1) {
-//              // status
-//              this.currentStatus = this.status.standby
-//            }
-//            // items
-//            Array.prototype.splice.apply(this.all, [index, 1])
-//            this.currentItem = 0
-//            this.currentPage = 0
-//          } else {
-//            Array.prototype.splice.apply(this.all, [index, 1])
-//            if (this.currentItem > index) {
-//              this.currentItem--
-//            }
-//            this.currentPage = this.currentItem / this.singlePageItemSize
-//          }
-//        }
+        if (index < this.itemSize && index >= 0) {
+          // check if there be remaining items
+          if (this.itemSize === 1) {
+            // status
+            this.currentStatus = this.status.standby
+            this.currentItem = -1
+          } else {
+            // choose the nearest one after this
+            if (index === this.itemSize - 1) {
+              this.currentItem--
+              this.currentPage = Math.floor(this.currentItem / this.singlePageItemSize)
+            }
+          }
+          this.all.splice(index, 1)
+        }
       }
     }
   }
@@ -278,7 +306,7 @@
       right: 60px;
       float: right;
       div.content{
-        width: 418px;
+        width: 420px;
         height: 645px;
         box-shadow: $box-shadow;
         overflow-x: hidden;
@@ -286,23 +314,26 @@
         ul{
           position: relative;
           float: left;
-          min-width: 418px;
+          min-width: 420px;
           transition: left .5s linear;
         }
         li{
           position: relative;
           float: left;
-          width: 179px;
-          height: 276px;
+          width: 177px;
+          height: 274px;
           margin: 21px 0 0 21px;
+          border: 1px solid #9b9b9b;
           &.active div.modeLook{
             display: flex;
+          }
+          &.marginRight{
+            margin-right: 200px;
           }
           &>img{
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border: 1px solid #9b9b9b;
           }
         }
       }
