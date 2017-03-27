@@ -19,11 +19,11 @@ let getNav = function (routeName) {
       break
     case 'Report1':
       result.title = '问案报告'
-      result.crumbs = crumbs.concat([{name: '扫描问啊', route: {name: 'Upload'}}, {name: '问案报告'}])
+      result.crumbs = crumbs.concat([{name: '扫描问案', route: {name: 'Upload'}}, {name: '问案报告'}])
       break
     case 'Report2':
       result.title = '问案报告'
-      result.crumbs = crumbs.concat([{name: '扫描问啊', route: {name: 'Upload'}}, {name: '问案报告'}])
+      result.crumbs = crumbs.concat([{name: '扫描问案', route: {name: 'Upload'}}, {name: '问案报告'}])
       break
     case 'MyCase':
       result.title = '我的案件'

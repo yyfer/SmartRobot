@@ -102,7 +102,7 @@
   $width: 1440px;
   $height: 1024px;
   $background-color: #ffffff;
-  $font-family:  'Microsoft YaHei',serif;
+  $font-family: PingFang SC,'Microsoft YaHei',serif;
   html,body{
     width: auto;
     height: auto;
