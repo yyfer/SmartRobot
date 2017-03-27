@@ -162,16 +162,15 @@
   // consult
   div.consult{
     position: relative;
-    margin: 56px 70px 0 70px;
+    margin: 36px 70px 0 70px;
     font-size: 24px;
     z-index: 1;
-
     div.operator{
       position: absolute;
       float: right;
       height: 64px;
       right: 0;
-      top: -120px;
+      top: -100px;
       &>a{
         display: inline-block;
         float: left;
@@ -212,7 +211,7 @@
       float: left;
       //consult-chat_panel
       .chat_panel{
-        height: 526px;
+        height: 512px;
         overflow-y: auto;
         overflow-x: hidden;
         background-color: #ffffff;
@@ -345,7 +344,7 @@
     div.right{
       position:relative;
       width: 418px;
-      height: 645px;
+      height: 630px;
       right: 60px;
       float: right;
       box-shadow: $box-shadow;
@@ -397,11 +396,11 @@
         position: relative;
       }
       li{
-        display: inline-block;
         width: 100%;
         height: 110px;
         margin-bottom: 20px;
         box-shadow: $box-shadow;
+        background-color: #ffffff;
         &:last-of-type{
           margin: 0;
         }
