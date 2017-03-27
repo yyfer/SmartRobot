@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <div class="pre-page">
-        <img :src="prePage.src">
+        <img :src="prePage.src" @click="routeTo({name: 'Report2'})">
       </div>
       <div class="dispute-case box-wrapper">
         <div class="box">
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="next-page">
-        <img :src="nextPage.src" @click="routeTo('Report2')">
+        <img :src="nextPage.src" @click="routeTo({name: 'Report2'})">
       </div>
     </div>
   </div>

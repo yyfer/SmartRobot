@@ -8,7 +8,7 @@
     </div>
     <div class="content">
       <div class="pre-page">
-        <img :src="prePage.src"  @click="routeTo('Report1')">
+        <img :src="prePage.src" @click="routeTo({name: 'Report1'})">
       </div>
       <div class="case-proof box-wrapper">
         <div class="box">
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="next-page">
-        <img :src="nextPage.src">
+        <img :src="nextPage.src" @click="routeTo({name: 'Report1'})">
       </div>
       <div class="compensate-range-wrapper">
         <div class="compensate-range">

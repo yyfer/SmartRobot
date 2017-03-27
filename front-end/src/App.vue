@@ -1,12 +1,15 @@
 <template>
   <div>
     <div id="app" @click="isLogin?'':toLoginPage()">
-      <h1 class="logo" v-if="!isLogin"><i></i><span>{{system_name}}</span></h1>
+      <div class="logo" v-if="!isLogin || isHome()">
+        <h1><i></i><span>{{system_name}}</span></h1>
+        <h2 v-show="isLogin">{{sub_name}}</h2>
+      </div>
       <div class="logo2" v-else>
         <h1><i></i><span>{{system_name}}</span></h1>
         <h2>{{sub_name}}</h2>
       </div>
-      <NavBar v-show="isLogin"></NavBar>
+      <NavBar v-show="isLogin && !isHome()"></NavBar>
       <router-view
         v-on:modeImageIn="modeImageIn"
         v-on:modeTipsIn="modeTipsIn"
@@ -66,6 +69,13 @@
       }
     },
     methods: {
+      isHome () {
+        if (this.$route && this.$route.name === 'Home') {
+          return true
+        } else {
+          return false
+        }
+      },
       toLoginPage () {
         if (this.$route && this.$route.name !== 'Login') {
           this.$router.push({name: 'Login'})
@@ -124,32 +134,44 @@
     font-family: $font-family;
     padding-top: $padding-top-init;
   }
-  h1.logo{
+  div.logo{
     position: relative;
-    margin: 0 auto;
-    width: 420px;
-    height: 96px;
-    i{
+    h1{
       position: relative;
-      display: inline-block;
-      width: 96px;
+      margin: 0 auto;
+      width: 420px;
       height: 96px;
-      background: url("./assets/logo.png");
-      background-size: cover;
-      margin-right: 30px;
+      i{
+        position: relative;
+        display: inline-block;
+        width: 96px;
+        height: 96px;
+        background: url("./assets/logo.png");
+        background-size: cover;
+        margin-right: 30px;
+      }
+      span{
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 290px;
+        height: 96px;
+        line-height: 96px;
+        font-size: 72px;
+        text-align: right;
+        color: #4a4a4a;
+      }
     }
-    span{
-      position: relative;
-      display: inline-block;
-      float: right;
-      width: 290px;
-      height: 96px;
-      line-height: 96px;
-      font-size: 72px;
-      text-align: right;
-      color: #4a4a4a;
+    h2{
+      height: 24px;
+      margin: 0 auto;
+      margin-top: 20px;
+      font-size: 24px;
+      text-align: center;
+      color: #9b9b9b;
     }
   }
+
   div.logo2{
     position: relative;
     margin-top: 40px - $padding-top-init;
