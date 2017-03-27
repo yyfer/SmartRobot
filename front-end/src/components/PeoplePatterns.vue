@@ -54,7 +54,7 @@
       width: $width;
       height: $height;
       background-color: #ffffff;
-      border: solid 1.1px #9b9b9b;
+      border: solid 1.2px #9b9b9b;
       border-radius: 50%;
     }
     div.middle{
@@ -62,7 +62,7 @@
       left: $gap;
       width: $width - 2*$gap;
       height: $height - 2*$gap;
-      border: solid 0.8px #9b9b9b;
+      border: solid 1px #9b9b9b;
       div.people{
         position: absolute;
         width: 100px;
@@ -91,7 +91,7 @@
       left: $gap*2;
       width: $width - 4*$gap;
       height: $height - 4*$gap;
-      border: solid 0.6px #9b9b9b;
+      border: solid 1px #9b9b9b;
     }
     div.logo{
       position: absolute;
