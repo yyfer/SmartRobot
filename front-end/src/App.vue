@@ -1,9 +1,11 @@
 <template>
   <div>
     <div id="app" @click="isLogin?'':toLoginPage()">
-      <h1 class="logo" v-if="isLogin" style="margin-top: -60px;"><i></i><span>{{system_name}}</span></h1>
-      <h1 class="logo" v-else><i></i><span>{{system_name}}</span></h1>
-      <h2 class="subtitle" v-show="isLogin">{{sub_name}}</h2>
+      <h1 class="logo" v-if="!isLogin"><i></i><span>{{system_name}}</span></h1>
+      <div class="logo2" v-else>
+        <h1><i></i><span>{{system_name}}</span></h1>
+        <h2>{{sub_name}}</h2>
+      </div>
       <NavBar v-show="isLogin"></NavBar>
       <router-view
         v-on:modeImageIn="modeImageIn"
@@ -101,6 +103,7 @@
 <style lang="scss" rel="stylesheet/scss" type="text/css">
   $width: 1440px;
   $height: 1024px;
+  $padding-top-init: 147px;
   $background-color: #ffffff;
   $font-family: PingFang SC,'Microsoft YaHei',serif;
   html,body{
@@ -109,52 +112,81 @@
     background-color: $background-color;
   }
   ul,li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+     list-style: none;
+     margin: 0;
+     padding: 0;
+   }
   #app {
     position: relative;
     width: $width;
-    height: $height;
+    height: $height - $padding-top-init;
     margin: 0 auto;
     font-family: $font-family;
-    padding-top: 100px;
+    padding-top: $padding-top-init;
   }
   h1.logo{
     position: relative;
     margin: 0 auto;
-    width: 358px;
-    height: 80px;
+    width: 420px;
+    height: 96px;
     i{
       position: relative;
       display: inline-block;
-      width: 80px;
-      height: 80px;
-      background: url("./assets/logo.png") 0 0 no-repeat;
+      width: 96px;
+      height: 96px;
+      background: url("./assets/logo.png");
       background-size: cover;
+      margin-right: 30px;
     }
     span{
       position: relative;
       display: inline-block;
       float: right;
-      margin-top: 8px;
-      width: 258px;
-      height: 64px;
-      font-size: 64px;
-      line-height: 1;
+      width: 290px;
+      height: 96px;
+      line-height: 96px;
+      font-size: 72px;
       text-align: right;
       color: #4a4a4a;
     }
   }
-  h2.subtitle{
-    height: 36px;
-    margin: 0 auto;
-    margin-top: 10px;
-    font-size: 24px;
-    line-height: 1.5;
-    text-align: center;
-    color: #9b9b9b;
+  div.logo2{
+    position: relative;
+    margin-top: 40px - $padding-top-init;
+    h1{
+      position: relative;
+      margin: 0 auto;
+      width: 277px;
+      height: 64px;
+      i{
+        position: relative;
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        background: url("./assets/logo2.png");
+        background-size: cover;
+        margin-right: 20px;
+      }
+      span{
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 193px;
+        height: 64px;
+        line-height: 64px;
+        font-size: 48px;
+        text-align: right;
+        color: #4a4a4a;
+      }
+    }
+    h2{
+      height: 24px;
+      margin: 0 auto;
+      margin-top: 20px;
+      font-size: 24px;
+      text-align: center;
+      color: #9b9b9b;
+    }
   }
   img.bg{
     position: absolute;

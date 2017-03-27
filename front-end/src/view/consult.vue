@@ -1,5 +1,8 @@
 <template>
   <div class="consult">
+    <div class="operator">
+      <a><i class="print"></i><span @click="print">打印报告</span></a>
+    </div>
     <div class="left">
       <div class="title">对话小津</div>
       <div class="chat_panel">
@@ -117,6 +120,10 @@
       }
     },
     methods: {
+      print () {
+        // print the conversation's content
+        this.$emit('modeTipsIn', '请稍后......')
+      },
       modeImageIn (src) {
         let width = 700
         let height = 214
@@ -158,6 +165,39 @@
     margin: 56px 70px 0 70px;
     font-size: 24px;
     z-index: 1;
+
+    div.operator{
+      position: absolute;
+      float: right;
+      height: 64px;
+      right: 0;
+      top: -120px;
+      &>a{
+        display: inline-block;
+        float: left;
+        height: 64px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+        color: #4a4a4a;
+        &>span{
+          display: inline-block;
+          float: left;
+          line-height: 64px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        &>i.print{
+          display: inline-block;
+          float: left;
+          width: 43px;
+          height: 36px;
+          margin: 14px 20px 0 0;
+          background-image: url("../assets/生成报告.png");
+        }
+      }
+    }
     div.title{
       width: 146px;
       height: 36px;

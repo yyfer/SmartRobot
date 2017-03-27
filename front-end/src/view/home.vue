@@ -1,23 +1,32 @@
 <template>
-  <div id="home" class="content-wrapper">
-    <div class="content">
-      <div class="layer" v-for="opt in operators">
-        <div class="layer-title">{{opt.title}}</div>
-        <div class="layer-btn-icon"><img :src="opt.icon"></div>
-        <div class="layer-content">
-          <span>{{opt.description}}</span>
-        </div>
-        <div class="layer-footer">
-          <a href="javascript:;" class="btn" @click="routeTo(opt.route)">
-            <div>选择</div>
-          </a>
+  <!--<transition-->
+    <!--v-on:beforeEnter="beforeEnter"-->
+    <!--v-on:enter="enter"-->
+    <!--v-on:leave="leave"-->
+  <!--&gt;-->
+    <div id="home" class="content-wrapper">
+      <div class="content">
+        <div class="layer" v-for="opt in operators">
+          <div class="layer-title">{{opt.title}}</div>
+          <div class="layer-btn-icon"><img :src="opt.icon"></div>
+          <div class="layer-content">
+            <span>{{opt.description}}</span>
+          </div>
+          <div class="layer-footer">
+            <a href="javascript:;" class="btn" @click="routeTo(opt.route)">
+              <div>选择</div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <!--</transition>-->
 </template>
 
 <script>
+  // velocity.js
+  let Velocity = require('velocity-animate')
+  require('velocity-animate/velocity.ui')
   export default {
     name: 'home',
     data () {
@@ -30,6 +39,27 @@
       }
     },
     methods: {
+      beforeEnter (el) {
+//        let selectors = el.querySelectorAll('.layer')
+//        selectors.forEach((layer) => {
+//          layer.style.opacity = 0
+//        })
+      },
+      enter (el, done) {
+        let selectors = el.querySelectorAll('.layer')
+//        let sequence = [
+//          {e: selectors, p: {scale: 0}, o: {duration: 200}},
+//          {e: selectors[1], p: {scale: 1, opacity: 0.9}, o: {duration: 250}},
+//          {e: selectors[2], p: {scale: 1, opacity: 0.9}, o: {duration: 250, easing: 'ease-out'}},
+//          {e: selectors[0], p: {scale: 1, opacity: 0.9}, o: {duration: 250, easing: 'ease-out', complete: done}}
+//        ]
+//        Velocity.RunSequence(sequence)
+        Velocity(selectors, 'transition.swoopIn', {stagger: 200, drag: true})
+      },
+      leave (el, done) {
+        el.style.display = 'none'
+        done()
+      },
       routeTo (route) {
         this.$router.push(route)
       }
@@ -54,11 +84,11 @@
     float: left;
     width: 360px;
     height: 587px;
-    opacity: 0.9;
     border-radius: 9px;
     background-color: #ffffff;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
+    opacity: 0.9;
   }
 
   .layer:not(:first-child) {
