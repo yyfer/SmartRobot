@@ -7,6 +7,9 @@
       <a><i class="print"></i><span @click="print">打印报告</span></a>
     </div>
     <div class="content">
+      <div class="pre-page">
+        <img :src="prePage.src"  @click="routeTo('Report1')">
+      </div>
       <div class="case-proof box-wrapper">
         <div class="box">
           <div class="box-title">本案证据</div>
@@ -40,6 +43,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="next-page">
+        <img :src="nextPage.src">
       </div>
       <div class="compensate-range-wrapper">
         <div class="compensate-range">
@@ -87,7 +93,7 @@
           '人民币短期借款合同',
           '借款借据',
           '债权转让协议',
-          '中国工商银行江苏省分行营业部向中国华融资产管理公司南京办事处转让债权公告'
+          '中国工商银行江苏省分行营业部转让债权公告'
         ],
         relativeAh: [
           '（2015）津高民申字第136号',
@@ -108,7 +114,13 @@
           {name: '姐夫', src: require('../assets/姐夫.png')},
           {name: '妹妹', src: require('../assets/妹妹.png')},
           {name: '妹夫', src: require('../assets/妹夫.png')}
-        ]
+        ],
+        prePage: {
+          src: require('../assets/icon_pre_page.png')
+        },
+        nextPage: {
+          src: require('../assets/icon_next_page.png')
+        }
       }
     },
     filters: {

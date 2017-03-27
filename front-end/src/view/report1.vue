@@ -7,6 +7,9 @@
       <a><i class="print"></i><span @click="print">打印报告</span></a>
     </div>
     <div class="content">
+      <div class="pre-page">
+        <img :src="prePage.src">
+      </div>
       <div class="dispute-case box-wrapper">
         <div class="box">
           <div class="box-title">争议焦点</div>
@@ -29,10 +32,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-wrapper">
-      <div class="footer">
-        <div class="dot" v-for="report in reports" :class="{active:report.active}" @click="routeTo(report.route)"></div>
+      <div class="next-page">
+        <img :src="nextPage.src" @click="routeTo('Report2')">
       </div>
     </div>
   </div>
@@ -51,15 +52,20 @@
           '原告第一联合的与诉讼主体相关系列问题。具体体现在原告第一联合是否为被告江南公司的债权人。',
           '原告第一联合所主张的债权（保证债权）是否存在诉讼时效问题。',
           '资产管理司法解释能否适用于本案。',
-          '资产管理司法解释能否适用于本案。',
           '《担保法》的理解与适用问题。',
           '担保法司法解释的理解与适用问题。',
           '江南公司是否承担连带保证责任。'
         ],
         charts: [
-          {style: {width: '760px', height: '223px'}, src: require('../assets/line-chart-light-test.png')},
-          {style: {width: '760px', height: '391px'}, src: require('../assets/multi-line-chart-light-test.png')}
-        ]
+          {style: {width: '760px', height: '214px'}, src: require('../assets/line-chart-light.png')},
+          {style: {width: '760px', height: '330px'}, src: require('../assets/multi-line-chart-light.png')}
+        ],
+        prePage: {
+          src: require('../assets/icon_pre_page.png')
+        },
+        nextPage: {
+          src: require('../assets/icon_next_page.png')
+        }
       }
     },
     methods: {

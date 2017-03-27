@@ -140,6 +140,7 @@
       letter-spacing: normal;
       color: #39393a;
       text-align: left;
+      margin-top:-25px
     }
     .left-side{
       float:left;
@@ -150,7 +151,7 @@
       .panel.first{
         width: 767px;
         height: 390px;
-        margin-top:20px;
+        margin-top:10px;
         .header{
           text-align: left;
           margin:10px 20px;
@@ -205,7 +206,7 @@
       .panel{
         width: 454px;
         height: 596px;
-        margin-top:20px;
+        margin-top:10px;
         position:relative;
         .line{
             height: 554px;

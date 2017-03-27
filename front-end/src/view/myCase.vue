@@ -99,6 +99,7 @@
         ],
         timeLines: [
           {year: '2016年', monthDay: '2月9日', isShow: true, isCurrent: false},
+          {year: '2016年', monthDay: '4月15日', isShow: false, isCurrent: false},
           {year: '2016年', monthDay: '7月16日', isShow: false, isCurrent: true},
           {year: '2016年', monthDay: '12月4日', isShow: false, isCurrent: false},
           {year: '2017年', monthDay: '1月26日', isShow: true, isCurrent: false},
@@ -175,10 +176,10 @@
     .left-side{
       float:left;
       .my-case-panel-wrapper{
-        margin-top:60px;
+        margin-top:10px;
         position: relative;
         .my-case-panel.first{
-          width: 700px;
+          width: 720px;
           height: 484px;
           position: relative;
           z-index:1000;
@@ -186,7 +187,7 @@
           cursor:pointer;
         }
         .my-case-panel.second{
-          width: 630px;
+          width: 648px;
           height: 436px;
           opacity: 0.4;
           background-color: #ffffff;
@@ -196,7 +197,7 @@
           left:5%;
         }
         .my-case-panel.third{
-          width: 560px;
+          width: 576px;
           height: 387px;
           opacity: 0.2;
           background-color: #ffffff;
@@ -276,9 +277,9 @@
       .timeline-wrapper{
         position: relative;
         margin-left:95px;
-        top: -100px;
+        top: -120px;
         .line{
-          height: 750px;
+          height: 610px;
           border-style: solid;
           border-width: 1px;
           border-image-source: radial-gradient(circle at 0 50%, #9b9b9b, rgba(0, 0, 0, 0.67) 68%, rgba(0, 0, 0, 0));
@@ -286,12 +287,12 @@
           position: absolute;
           left: 105px;
           z-index:100;
-          top:-70px;
+          top:-48px;
         }
         .timeline{
           position: relative;
           z-index:200;
-          margin-top:110px;
+          margin-top:64px;
           .year,.monthDay,.dot{
             float:left;
           }

@@ -3,7 +3,7 @@
  */
 #report {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   z-index: 1;
 }
 
@@ -29,7 +29,7 @@ div.operator{
   float: right;
   height: 64px;
   right: 100px;
-  top: -133px;
+  top: -93px;
   &>a{
     display: inline-block;
     float: left;
@@ -63,9 +63,15 @@ div.operator{
 .case-proof {
   width: 300px;
 }
+.case-proof.box-wrapper ul.box-list li{
+  width:292px;
+}
 .relative-case {
   width: 360px;
-  margin-left: 41px;
+  margin-left: 10px;
+}
+.relative-case.box-wrapper ul.box-list li{
+  width:356px;
 }
 
 .box-wrapper {
@@ -76,7 +82,7 @@ div.operator{
     width: 146px;
     height: 36px;
     font-family: PingFangSC;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -86,6 +92,7 @@ div.operator{
   }
   ul.box-list {
     li{
+      width: 457px;
       height: auto;
       opacity: 0.9;
       background-color: #ffffff;
@@ -114,6 +121,9 @@ div.operator{
         }
       }
     }
+    li:first-child{
+      margin-top:10px;
+    }
   }
 }
 
@@ -126,7 +136,7 @@ div.operator{
     width: 326.1px;
     height: 36px;
     font-family: PingFangSC;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -139,7 +149,6 @@ div.operator{
       margin-top: 20px;
       img{
         width: 760px;
-        object-fit: contain;
       }
     }
   }
@@ -150,7 +159,7 @@ div.operator{
   display: inline-block;
   float: left;
   text-align: left;
-  margin-left: 41px;
+  margin-left: 10px;
   .people-relative-title {
     width: 326.1px;
     height: 36px;
@@ -178,8 +187,9 @@ div.operator{
   display: inline-block;
   float: left;
   position: relative;
-  top: -135px;
+  top: -190px;
   clear: both;
+  left: 100px;
   .compensate-range-title {
     width: 146px;
     height: 36px;
@@ -262,31 +272,19 @@ div.operator{
   }
 }
 
-.footer-wrapper {
-  text-align: center;
-  margin-top: 40px;
-  .footer{
-    display: inline-block;
-    .dot {
-      width: 20px;
-      height: 20px;
-      background-color: #ffffff;
-      border: solid 1px #9b9b9b;
-      border-radius: 50%;
-      float: left;
-      &:not(first-child){
-        margin-left: 30px;
-      }
-      &.active {
-        width: 20px;
-        height: 20px;
-        background-color: #4990e2;
-        border: solid 1px #9b9b9b;
-        border-radius: 50%;
-      }
-      &:hover{
-        cursor: pointer;
-      }
-    }
-  }
+.pre-page,.next-page{
+  float:left;
+  margin-top:22%;
+}
+
+.pre-page img,.next-page img{
+  cursor:pointer;
+}
+
+.pre-page{
+  margin-right:50px;
+}
+
+.next-page{
+  margin-left:50px;
 }
