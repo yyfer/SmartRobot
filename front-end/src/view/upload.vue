@@ -29,19 +29,21 @@
     <div class="right">
       <div class="title">已扫描</div>
       <div class="content">
-        <ul :style="{width:420*pageSize+'px',left:-400*currentPage+'px'}">
-          <li v-for="item in viewAll"
-              :class="{active:item.id === currentItem, marginRight:item.marginRight}"
-              @click="select(item.id)"
-              :key="item.id"
-              :data-index="item.id">
-            <img :src="item.src" alt="">
-            <ModeLook>
-              <div @click.stop><img src="../assets/移动.png" alt="..."></div>
-              <div @click.stop="deleteItem(item.id)"><img src="../assets/删除.png" alt="..."></div>
-            </ModeLook>
-          </li>
-        </ul>
+        <div class="container">
+          <ul :style="{width:380*pageSize+'px',left:-380*currentPage+'px'}">
+            <li v-for="item in viewAll"
+                :class="{active:item.id === currentItem, marginRight:item.marginRight}"
+                @click="select(item.id)"
+                :key="item.id"
+                :data-index="item.id">
+              <img :src="item.src" alt="">
+              <ModeLook>
+                <div @click.stop><img src="../assets/移动.png" alt="..."></div>
+                <div @click.stop="deleteItem(item.id)"><img src="../assets/删除.png" alt="..."></div>
+              </ModeLook>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="slidebar">
         <span v-for="i in pageSize" :class="{active:(i-1) === currentPage}" @click="jump(i-1)"></span>
@@ -174,7 +176,7 @@
   $box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   div.upload{
     position: relative;
-    margin: 56px 70px 0 70px;
+    margin: 46px 70px 0 70px;
     font-size: 24px;
     z-index: 1;
     div.title{
@@ -190,7 +192,7 @@
       float: right;
       height: 64px;
       right: 0;
-      top: -120px;
+      top: -110px;
       &>a{
         display: inline-block;
         float: left;
@@ -219,7 +221,7 @@
     }
     div.left{
       position:relative;
-      width: 790px;
+      width: 778px;
       float: left;
       //upload-scan_panel
       .scan_panel{
@@ -247,10 +249,10 @@
       }
       //info
       .info{
-        height: 118px;
+        height: 100px;
         background-color: #4990e2;
         div.tips{
-          margin: 30px 0 0 50px;
+          margin: 21px 0 0 30px;
           color: #ffffff;
           float: left;
           p{
@@ -302,38 +304,56 @@
     }
     div.right{
       position:relative;
-      width: 418px;
+      width: 420px;
       right: 60px;
       float: right;
       div.content{
-        width: 420px;
-        height: 645px;
+        $width: 420px;
+        $height: 626px;
+        $width-li: 178px;
+        $height-li: 268px;
+        $padding-v: 20px;
+        $padding-h: 25px;
+        $gap: 10px;
+
+        position: relative;
+        width: $width - 2*$padding-h;
+        height: $height - 2*$padding-v;
         box-shadow: $box-shadow;
-        overflow-x: hidden;
         background-color: #ffffff;
-        ul{
+        padding: $padding-v $padding-h;
+        div.container{
+          $width-c: $width-li*2 + $gap + 4px;
+          $height-c: $height-li*2 + 2*$gap + 4px;
           position: relative;
-          float: left;
-          min-width: 420px;
-          transition: left .5s linear;
-        }
-        li{
-          position: relative;
-          float: left;
-          width: 177px;
-          height: 274px;
-          margin: 21px 0 0 21px;
-          border: 1px solid #9b9b9b;
-          &.active div.modeLook{
-            display: flex;
-          }
-          &.marginRight{
-            margin-right: 200px;
-          }
-          &>img{
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+          width: $width-c;
+          height: $height-c;
+          overflow-x: hidden;
+          ul{
+            position: relative;
+            float: left;
+            min-width: $width-c;
+            height: $height-c;
+            transition: left .5s linear;
+            li{
+              position: relative;
+              float: left;
+              width: $width-li;
+              height: $height-li;
+              margin: 0 $gap $gap 0;
+              border: 1px solid #9b9b9b;
+              &.active div.modeLook{
+                display: flex;
+              }
+              &.marginRight{
+                margin-right: 200px;
+              }
+              &>img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
           }
         }
       }
