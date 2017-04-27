@@ -41,10 +41,14 @@ export default {
   login (state, id) {
     state.isLogin = true
     state.id = id
+    sessionStorage.setItem('SmartRobot_isLogin', true)
+    sessionStorage.setItem('SmartRobot_id', id)
   },
   logout (state) {
     state.isLogin = false
     state.id = ''
+    sessionStorage.setItem('SmartRobot_isLogin', false)
+    sessionStorage.setItem('SmartRobot_id', '')
   },
   nav (state, routeName) {
     state.nav.title = getNav(routeName).title
