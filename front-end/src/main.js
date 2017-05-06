@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // third-party css quote
 require('animate.css')
 require('normalize.css')
 
 Vue.config.productionTip = false
+
+Vue.use(VueAwesomeSwiper)
 
 // config before every route entry
 router.beforeEach((to, from, next) => {

@@ -12,56 +12,53 @@
     <div class="content">
         <div class="my-case-wrapper">
           <div class="left-side">
-            <div class="my-case-panel-wrapper" @click="routeTo('MyCaseDetail')">
-              <div class="panel my-case-panel third void">
-                <div class="panel-bar my-case-panel-bar"></div>
-              </div>
-              <div class="panel my-case-panel second void">
-                <div class="panel-bar my-case-panel-bar"></div>
-              </div>
-              <div class="panel my-case-panel first">
-                <div class="panel-bar my-case-panel-bar"></div>
-                <div class="my-case-panel-body">
-                  <div class="header clearfix">
-                    <div class="left">
-                      <div class="ah">{{ ah }}</div>
-                      <div class="description">{{ description }}</div>
-                    </div>
-                    <div class="right">
-                      <div class="type-wrapper"><div class="type">{{ type }}</div></div>
-                    </div>
-                  </div>
-                  <div class="list-wrapper clearfix">
-                    <div class="list" v-for="info,index in infos" v-if="index == 0 || index == 1">
-                      <div class="icon">
-                        <img :src="info.icon">
+            <div class="my-case-panel-wrapper">
+              <swiper :options="swiperOption" ref="mySwiper">
+                <!-- slides -->
+                <swiper-slide v-for="myCase in myCases" class="panel">
+                  <div class="panel-bar my-case-panel-bar"></div>
+                  <div class="my-case-panel-body">
+                    <div class="header clearfix">
+                      <div class="left">
+                        <div class="ah">{{ myCase.ah }}</div>
+                        <div class="description">{{ myCase.description }}</div>
                       </div>
-                      <div class="introduce">
-                        <div class="name">
-                          {{ info.name }}
-                        </div>
-                        <div class="detail">
-                          {{ info.detail }}
-                        </div>
+                      <div class="right">
+                        <div class="type-wrapper"><div class="type">{{ myCase.type }}</div></div>
                       </div>
                     </div>
-                    <div class="line"></div>
-                    <div class="list" v-for="info,index in infos" v-if="index == 2 || index == 3">
-                      <div class="icon">
-                        <img :src="info.icon">
-                      </div>
-                      <div class="introduce">
-                        <div class="name">
-                          {{ info.name }}
+                    <div class="list-wrapper clearfix">
+                      <div class="list" v-for="info,index in myCase.infos" v-if="index == 0 || index == 1">
+                        <div class="icon">
+                          <img :src="info.icon">
                         </div>
-                        <div class="detail">
-                          {{ info.detail }}
+                        <div class="introduce">
+                          <div class="name">
+                            {{ info.name }}
+                          </div>
+                          <div class="detail">
+                            {{ info.detail }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="line"></div>
+                      <div class="list" v-for="info,index in myCase.infos" v-if="index == 2 || index == 3">
+                        <div class="icon">
+                          <img :src="info.icon">
+                        </div>
+                        <div class="introduce">
+                          <div class="name">
+                            {{ info.name }}
+                          </div>
+                          <div class="detail">
+                            {{ info.detail }}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </swiper-slide>
+              </swiper>
             </div>
           </div>
           <div class="right-side">
@@ -87,15 +84,92 @@
     name: 'myCase',
     data () {
       return {
-        ah: '（2016）津01民初76号',
-        description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
-        // 代理人（代），当事人（当）
         type: '当',
-        infos: [
-          {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
-          {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
-          {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
-          {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+        myCases: [
+          {
+            ah: '（2016）津01民初76号',
+            description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有限公司天津分行纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          },
+          {
+            ah: '（2016）津01民初77号',
+            description: '招商银行股份有限公司天津分行与天津市亿君成商贸有限公司，航天科工哈尔滨风华有限公司，姜昊保理合同纠纷',
+            // 代理人（代），当事人（当）
+            type: '当',
+            infos: [
+              {name: '承办人', icon: require('../assets/icon_cbr.png'), detail: '史会明'},
+              {name: '审判庭', icon: require('../assets/icon_spt.png'), detail: '园区审判庭'},
+              {name: '立案日期', icon: require('../assets/icon_larq.png'), detail: '2016-07-16'},
+              {name: '结案日期', icon: require('../assets/icon_jarq.png'), detail: '2016-08-14'}
+            ]
+          }
         ],
         timeLines: [
           {year: '2016年', monthDay: '2月9日', isShow: true, isCurrent: false},
@@ -104,7 +178,19 @@
           {year: '2016年', monthDay: '12月4日', isShow: false, isCurrent: false},
           {year: '2017年', monthDay: '1月26日', isShow: true, isCurrent: false},
           {year: '2017年', monthDay: '3月5日', isShow: false, isCurrent: false}
-        ]
+        ],
+        swiperOption: {
+          notNextTick: true,
+
+          effect: 'coverflow',
+          slidesPerView: 'auto',
+          centeredSlides: true,
+          coverflow: {
+            rotate: 30,
+            depth: 300,
+            stretch: 50
+          }
+        }
       }
     },
     methods: {
@@ -174,39 +260,15 @@
   }
   div.my-case-wrapper{
     .left-side{
-      float:left;
       .my-case-panel-wrapper{
-        margin-top:10px;
         position: relative;
-        .my-case-panel.first{
+        .swiper-container{
+          width: 1440px;
+          padding: 15px 0;
+        }
+        .swiper-slide{
           width: 720px;
           height: 484px;
-          position: relative;
-          z-index:1000;
-          top:80px;
-          cursor:pointer;
-        }
-        .my-case-panel.second{
-          width: 648px;
-          height: 436px;
-          opacity: 0.4;
-          background-color: #ffffff;
-          position: absolute;
-          z-index:900;
-          top:40px;
-          left:5%;
-        }
-        .my-case-panel.third{
-          width: 576px;
-          height: 387px;
-          opacity: 0.2;
-          background-color: #ffffff;
-          box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
-          position: absolute;
-          z-index:800;
-          left:10%;
-        }
-        .my-case-panel{
           .header{
             margin-top:50px;
             .left{
@@ -273,7 +335,6 @@
       }
     }
     .right-side{
-      float:left;
       .timeline-wrapper{
         position: relative;
         margin-left:95px;
